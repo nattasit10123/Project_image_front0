@@ -17,6 +17,10 @@ export default function RegisterForm() {
   const hdlSubmit = async (e) => {
     try {
       e.preventDefault();
+      const { username, password, confirmPassword, email, phone } = input;
+      if (!(username && password && confirmPassword && email && phone)) {
+        return alert("Fulfill all inputs");
+      }
       if (input.password !== input.confirmPassword) {
         return alert("plase check confirm password");
       }
